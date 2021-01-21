@@ -9,20 +9,19 @@ namespace PigLatinTranslator
         {
             Console.WriteLine("Hello and welcome to the Pig Latin Translator! Please enter a word");
             string input = Console.ReadLine();
-            //creating an array of string length
-            char[] word = new char[input.Length];
-            //copying character by character into array
-            for (int i = 0; i < input.Length; i++)
+            Console.WriteLine(input.Substring(0,1));
+            if(input.Substring(0,1) == "a" || input.Substring(0, 1) == "e" || input.Substring(0, 1) == "o" || input.Substring(0, 1) == "u" || input.Substring(0, 1) == "i")
             {
-                word[i] = input[i];
+                Console.WriteLine(input + "way");
             }
-            // Printing content of array  
-            foreach (char c in word)
+            else
             {
-                Console.WriteLine(c);
+                Console.WriteLine("yikes");
             }
-
-
         }
+        
+
+    
+    
     }
 }
