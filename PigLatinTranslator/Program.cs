@@ -21,14 +21,22 @@ namespace PigLatinTranslator
                 string[] words = input.Split(' ');
                 foreach (var word in words)
                 {
-                    Console.WriteLine(word);
-
                     // make an array of vowels to search for
                     char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
+                    //make an array of symbols to search for
+                    char[] symbols = { '@', '0', '1', '2', '3', '4', 
+                        '5', '6', '7', '8', '9', '#', '$', '%', '&',
+                        '~', '^', '*', '+', '='};
+
                     //test input for vowels, find out where they are
                     int vowelPlace = word.IndexOfAny(vowels);
+                    
 
+                    if(word.IndexOfAny(symbols) != -1)
+                    {
+                        break;
+                    }
                     if (vowelPlace == 0)
                     {
                         Console.WriteLine(word + "way");
