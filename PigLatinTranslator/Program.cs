@@ -34,6 +34,9 @@ namespace PigLatinTranslator
 
                     if (string.IsNullOrEmpty(input))
                     {
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
                         Console.WriteLine("HEY! I said enter a word or sentence! Try again.");
                         break;
                     }
