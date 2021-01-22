@@ -31,13 +31,19 @@ namespace PigLatinTranslator
 
                     //test input for vowels, find out where they are
                     int vowelPlace = word.IndexOfAny(vowels);
-                    
 
-                    if(word.IndexOfAny(symbols) != -1)
+                    if (string.IsNullOrEmpty(input))
+                    {
+                        Console.WriteLine("HEY! I said enter a word or sentence! Try again.");
+                        break;
+                    }
+
+                    else if (word.IndexOfAny(symbols) != -1)
                     {
                         break;
                     }
-                    if (vowelPlace == 0)
+
+                    else if (vowelPlace == 0)
                     {
                         Console.WriteLine(word + "way");
                     }
