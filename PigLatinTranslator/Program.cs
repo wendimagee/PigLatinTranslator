@@ -12,8 +12,6 @@ namespace PigLatinTranslator
 
             do
             {
-
-
                 Console.WriteLine("Hello and Welcome to the Pig Latin Translator!");
                 Console.WriteLine("\nPlease enter a word or sentence to translate: ");
                 string input = Console.ReadLine();
@@ -48,7 +46,7 @@ namespace PigLatinTranslator
 
                     else if (vowelPlace == 0)
                     {
-                        Console.WriteLine(word + "way");
+                        Console.Write(word + "way ");
                     }
                     //if the word doesn't begin with a vowel
                     else if (vowelPlace == 1)
@@ -56,16 +54,16 @@ namespace PigLatinTranslator
 
                         string split1 = word.Substring(0, vowelPlace);
                         string split2 = word.Substring(vowelPlace);
-                        Console.WriteLine(split2 + split1 + "ay");
+                        Console.Write(split2 + split1 + "ay ");
                     }
                     else
                     {
                         string split1 = word.Substring(0, vowelPlace);
                         string split2 = word.Substring(vowelPlace);
-                        Console.WriteLine(split2 + split1 + "ay");
+                        Console.Write(split2 + split1 + "ay ");
                     }
                 }
-                    Console.WriteLine("Would you like to translate another word?(y/n)");
+                    Console.WriteLine("\n\nWould you like to translate another word?(y/n)");
                     char answer = char.Parse(Console.ReadLine());
                     if (char.ToLower(answer) == 'y')
                     {
