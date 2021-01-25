@@ -9,10 +9,11 @@ namespace PigLatinTranslator
         static void Main(string[] args)
         {
             bool goAgain = true;
+            Console.WriteLine("Hello and Welcome to the Pig Latin Translator!");
 
             do
             {
-                Console.WriteLine("Hello and Welcome to the Pig Latin Translator!");
+            
                 Console.WriteLine("\nPlease enter a word or sentence to translate: ");
                 string input = Console.ReadLine();
                 //split those words up!
@@ -23,7 +24,7 @@ namespace PigLatinTranslator
                     char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
                     //make an array of symbols to search for
-                    char[] symbols = { '@', '0', '1', '2', '3', '4', 
+                    char[] symbols = { '@', '0', '1', '2', '3', '4',
                         '5', '6', '7', '8', '9', '#', '$', '%', '&',
                         '~', '^', '*', '+', '='};
 
@@ -49,35 +50,36 @@ namespace PigLatinTranslator
                         Console.Write(word + "way ");
                     }
                     //if the word doesn't begin with a vowel
-                    else if (vowelPlace == 1)
+                   
+                    else
                     {
+                        string split4 = SplitEmUp(word, vowelPlace);
+                        Console.Write(split4);
+                    }
+                }
+                Console.WriteLine("\n\nWould you like to translate another word?(y/n)");
+                char answer = char.Parse(Console.ReadLine());
+                if (char.ToLower(answer) == 'y')
+                {
+                    goAgain = true;
+                }
+                else
+                {
+                    goAgain = false;
+                }
+            }
 
-                        string split1 = word.Substring(0, vowelPlace);
-                        string split2 = word.Substring(vowelPlace);
-                        Console.Write(split2 + split1 + "ay ");
-                    }
-                    else
-                    {
-                        string split1 = word.Substring(0, vowelPlace);
-                        string split2 = word.Substring(vowelPlace);
-                        Console.Write(split2 + split1 + "ay ");
-                    }
-                }
-                    Console.WriteLine("\n\nWould you like to translate another word?(y/n)");
-                    char answer = char.Parse(Console.ReadLine());
-                    if (char.ToLower(answer) == 'y')
-                    {
-                        goAgain = true;
-                    }
-                    else
-                    {
-                        goAgain = false;
-                    }
-                }
-            
             while (goAgain == true);
         }
 
+        public static string SplitEmUp(string word, int vowelPlace)
+        {
+           
+                string split1 = word.Substring(0, vowelPlace);
+                string split2 = word.Substring(vowelPlace);
+                return (split2 + split1 + "ay ");
+            
+        }
     }
 }
 
